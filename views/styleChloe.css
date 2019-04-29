@@ -1,0 +1,178 @@
+/* GENERAL */
+*{
+    background-color: rgb(245, 202, 243);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+/* HEADER */
+header{
+    display: flex;
+    
+
+}
+/* Appli Chloé */
+#logoAppli{
+    flex: 3;
+    color: #c463b7;
+    font-size: 1.5em;
+}
+/* menu */
+menu{
+    display: flex;
+    flex: 1;
+}
+@media(max-width:664px){
+    menu{
+        display: column;
+        flex-wrap: wrap;
+        align-content: left;
+    }
+    #nomUser{
+        order:2;
+    }
+    #logUser{
+        order:1;
+    }
+}
+#nomUser{
+    align-items: flex-start;
+    order:1;
+}
+#logoUser{
+    width: 2em;
+    height : 2em;
+    order:2;
+}
+
+/* MAIN ACCUEIL */
+a.buttonStyle{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    box-shadow: rgb(97, 96, 97) 0.1em 0.2em;
+    margin: 2em;
+    padding: 1.5em 3em;
+    background-color: #610652;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+}
+a.buttonStyle:hover{
+    background-color: #f192e5;
+    box-shadow: rgb(214, 212, 212) 0.1em 0.2em;
+}
+main{
+    display: flex;
+    /*justify-content: space-around; ne marche pas !*/
+    flex-wrap: wrap;
+    /*flex-direction: column;*/
+}
+@media(max-width:664px){
+    main{
+        flex-direction: column;
+        /*justify-content: space-around; ne fonctionne pas! */
+
+    }
+    .buttonStyle{
+        /*flex-basis: 50%; ne fonctionne pas! */
+        /*width: 50%; enlevé car reste à gauche et je ne trouve pas comment le centrer*/
+        /*justify-content: space-around; ne fonctionne pas! */
+
+    }
+}
+
+
+/* MAIN DATABASE */
+#titreBdd{
+    order:1;
+    text-align: center;
+}
+#boutonsBdd{
+    order:2;
+    flex-wrap: wrap; 
+}
+#plus{
+    flex:1;
+}
+#dl{
+    flex:1;
+}
+form{
+    order: 3;
+}
+table{
+    order: 4;
+}
+
+/* MAIN MESSAGERIE*/
+/*#mainMessagerie{
+    display: flex;
+    text-align: center;
+    
+    flex-direction: column;
+}
+
+.boutons{
+    flex-direction: column;
+    justify-content: space-between;
+   /* flex-wrap: wrap;
+}
+h2{
+    margin-top: 2em;
+    text-align: left;
+}
+#messages{
+    justify-content: space-between;
+    margin-top: 0.5em;
+    text-align: left;
+}
+#mail, #texto{
+    margin: 2em;
+    flex-wrap: wrap;
+}
+#mail{
+    order : 1;
+}
+#texto{
+    order: 2;
+}
+
+@media(max-width:664px){
+    main #messagerie{
+        flex-direction: column;
+        /*justify-content: space-around; ne fonctionne pas! 
+
+    }
+    .buttonStyle{
+        /*flex-basis: 50%; ne fonctionne pas! */
+        /*width: 50%; enlevé car reste à gauche et je ne trouve pas comment le centrer*/
+        /*justify-content: space-around; ne fonctionne pas! 
+
+    }
+}*/
+
+
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    vertical-align: bottom;
+    margin-top : 5em;
+    font-style: italic;
+}
+#copyright{
+    /* je voudrais le fixer en bas je n'y arrive pas*/
+    /*align-items: flex-end; ne fonctionne pas*/
+}
+
