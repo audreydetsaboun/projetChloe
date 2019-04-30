@@ -30,15 +30,15 @@
                 </p>
             </fieldset>
             <!-- corps du mail -->
-            <p class="corpsMessage">
+            <p class="textArea">
                 <label for="corps">corps du message :</label>  
             </p><p>  
                 <textarea name="corpsMessage" id="corps" cols="30" rows="10" required></textarea>
             </p>
             <!-- boutton d'envoi du formulaire -->
             <p class= "formButton">
-                <input type="submit" value="Annuler">
                 <input type="submit" value="Envoyer">
+                <input type="submit" value="Annuler">
             </p>
         </form>
 

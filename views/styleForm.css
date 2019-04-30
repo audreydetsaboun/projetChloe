@@ -6,11 +6,11 @@ form{
     box-shadow : 5px 3px 3px #AAA;
     padding: 2em;
 }
-#corpsMessage{
+#textArea {
     width : 100%;
 }
 
-textarea[name="corpsMessage"]{
+textarea[name="corpsMessage"], [name="partPeau"]{
     width : 100%;
 }
 

@@ -1,10 +1,18 @@
 <?php
 /****** page Model pour accéder à la base de données ******/
 
-//db connexion
-function getBdd(){
-    $bdd = new PDO ('mysql:host=localhost;dbname=ChloeBdd;charset=utf8', 'root', 'root');
-    return $bdd;
+//try catch
+try
+{
+	//db connexion
+    function getBdd(){
+        $bdd = new PDO ('mysql:host=localhost;dbname=ChloeBdd;charset=utf8', 'root', 'root');
+        return $bdd;
+    }
+}
+catch(Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
 }
 
 //renvoi la liste des clients en tableau php
@@ -15,8 +23,9 @@ function getMessages(){
     $request->execute();
     //récupérer les données et les affecter dans une variable
     $messages = $request->fetchAll();
-    
+
     //retourner un tableau avec les clients
     return $messages;
 }
+
 ?>
