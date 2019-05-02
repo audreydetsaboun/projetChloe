@@ -1,5 +1,3 @@
-<?php require_once '../controllers/controllerNewClient.php'; ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,7 +9,7 @@
     </head>
     <body>
         <h1>Nouvelle Fiche Client</h1>
-        <form methode="POST" action="../controllers/controllerNewClient.php">
+        <form method="POST" action="../controllers/controllerNewClient.php">
             <!-- date de création de fiche 
             ===>>> TROUVER COMMENT LA METTRE AUTOMATIQUEMENT-->
             <p>
@@ -47,10 +45,6 @@
                 <p>
                     <label for="fixe">téléphone fixe :</label>    
                     <input type="text" id="fixe" name="fixe" required>
-                </p>
-                <p>
-                    <label for="mobile">mobile :</label>    
-                    <input type="text" id="mobile" name="mobile" required>
                 </p>
                 <p>
                     <label for="mobile">mobile :</label>    
