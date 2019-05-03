@@ -18,16 +18,16 @@ catch(Exception $e)
 
 
 //renvoi la liste des clients en tableau php
-function getClients(){
+function getInfosPerso(){
     $bddChloe = getBdd();
-    $request = $bddChloe->query('SELECT nom, prenom, mobile FROM FicheClient order by nom');
+    $request = $bddChloe->query('SELECT nom, prenom, mobile, fixe, mail, adresse, CP, ville, particularites FROM FicheClient');
     //executer la requete
     $request->execute();
     //récupérer les données et les affecter dans une variable
-    $clients = $request->fetchAll();
+    $infosPersos = $request->fetchAll();
     
     //retourner un tableau avec les clients
-    return $clients;
+    return $infosPersos;
 }
 ?>
 

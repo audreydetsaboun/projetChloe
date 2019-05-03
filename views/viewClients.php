@@ -44,6 +44,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- COMMENT INSERER UN LIEN VERS CHAQUE FICHE CLIENT ??? -->
             <?php foreach ($clients as $client): ?>
                 <tr>
                     <td><?= $client['nom']; ?></td>
