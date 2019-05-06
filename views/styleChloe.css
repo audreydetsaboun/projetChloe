@@ -147,6 +147,10 @@ main {
     }
 
 /* MAIN FICHE CLIENT */
+#mainFC{
+    display: flex;
+    flex-direction: column;
+}
 section{
     border: 1px solid black;
 }
@@ -154,7 +158,21 @@ section{
     width:12%;
     text-align: right;
 }
-
+#nom{
+    order: 1;
+}
+#infosPerso{
+    order:2;
+}
+#forfait{
+    order:3;
+}
+#visites{
+    order:4;
+}
+#messRecus{
+    order:5;
+}
 
 /* MAIN MESSAGERIE*/
 /*#mainMessagerie{
