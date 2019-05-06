@@ -15,7 +15,10 @@
     
     <main id="mainFC">
     </header>
-        <button>Retour</button>
+        <!-- boutton de retour en arrière -->
+        <p class="btnRetourn">
+            <a class="retour" href="viewClients.php"><img src="img/retour.png" alt="retour"></a>
+        </p>
         
 <!--  objectif : récupérer le parametre id_client dans l'url-->
         <section id="nom">
@@ -120,9 +123,16 @@
         </section>
     </main>
 
-        <p><button>Retour</button></p>
+        <!-- boutton de retour en arrière -->
+        <p class="btnRetourn">
+        <a class="retour" href="viewClients.php"><img src="img/retour.png" alt="retour"></a>
+        </p>
 
-        <p><button>Supprimer fiche</button></p>
+        <!-- boutton supprimer -->
+        <!-- trouver comment supprimer en SQL à partir de cette page-->
+        <p id="btnSupprimer">
+            <img id="supprimer" src="img/poubelle.png" alt="supprimer fiche client">
+        </p>
 
     <footer>
         <?php include('footer.inc.php'); ?>

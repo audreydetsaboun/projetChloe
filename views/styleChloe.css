@@ -173,6 +173,20 @@ section{
 #messRecus{
     order:5;
 }
+.btnRetourn{
+    margin: 1em;
+    text-align: right;
+}
+.retour img{
+    width: 15%;
+}
+#btnSupprimer{
+    margin : 2em;
+    text-align: center;
+}
+#supprimer {
+    width : 15%;
+}
 
 /* MAIN MESSAGERIE*/
 /*#mainMessagerie{
