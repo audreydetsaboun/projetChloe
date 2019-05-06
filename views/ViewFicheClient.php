@@ -16,7 +16,7 @@
     <main>
     </header>
         <button>Retour</button>
-
+<!--  objectif : récupérer le parametre id_client dans l'url-->
         <section id="nom">
             <!-- <?php // $client['prenom']; ?> <?php // $client['nom']; ?>
             ne fonctionne pas, trouver comment appeler une personne spécifique 
@@ -26,25 +26,27 @@
         </section>
         <section id="boutonsBdd">
             <!-- bouton Modifier client -->
-            <a href="???"><img id="modif" src="img/btn_modif.png" alt=""></a>
+            <a  href="???"><img id="btnModif" id="modif" src="img/btn_modif.png" alt=""></a>
         </section>
 
         <!-- SECTION INFO PERSONNELLES-->
         <section id="infosPerso">
-        <p>Fixe : </p>
-        <p>Mobile : </p>
-        <p>Mail : </p>
-        <p>adresse : </p>
-        <!-- rue
-        cp + ville -->
-        <p>Particularités : </p>
+            <p>Fixe : <?= $infosPerso['fixe']; ?></p>
+            <p>Mobile : <?= $infosPerso['mobile']; ?></p>
+            <p>Mail : <?= $infosPerso['mail']; ?></p>
+            <p>adresse : </p>
+            <p><?= $infosPerso['adresse']; ?></p>
+            <p><?= $infosPerso['CP']; ?> <?= $infosPerso['Ville']; ?></p>
+            <!-- rue
+            cp + ville -->
+            <p>Particularités : <?= $infosPerso['particularites']; ?></p>
         </section>
 
         <!-- SECTION FORFAIT-->
         <section id="forfait">
             <h2>Forfait</h2>
             <!-- bouton Modifier client -->
-            <a href="???.php"><img id="modif" src="img/btn_modif.png" alt=""></a>
+            <a href="???.php"><img id="btnModif" src="img/btn_modif.png" alt=""></a>
             <!-- bouton ajout nouveau forfait -->
             <a href="???.php"><img id="plus" src="img/Plus.png" alt=""></a>
 
@@ -57,14 +59,19 @@
             <!-- bouton ajout nouvelle visite -->
             <a href="???.php"><img id="plus" src="img/Plus.png" alt=""></a>
             <!-- afficher ici les visites qui ont eu lieu -->
-
-            <?php foreach ($infosPersos as $infosPerso): ?>
+<!-- pour l'instant, affiche toutes les visites -->
+<!-- trouver comment n'afficher que les visites du client consulté -->
+            <?php foreach ($visites as $visite): ?>
                 <article>
-                    <p><?= $infosPerso['nom']; ?></p>
-                    <p><?= $infosPerso['prenom']; ?></p>
-                    <p><?= $infosPerso['mobile']; ?></p>
+                    <p><?= $visite['date']; ?></p>
+                    <p><?= $visite['soin']; ?></p>
+                    <p><?= $visite['achat_produit']; ?></p>
+                    <p><?= $visite['montant_depenses']; ?></p>
+                    <p><?= $visite['promo']; ?></p>
+                    <p><?= $visite['cadeau']; ?></p>
+                    <p><?= $visite['forfait']; ?></p>
                 </article>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             
         </section>
 
@@ -72,6 +79,17 @@
         <section id="messRecus">
             <h2>Messages reçus</h2>
             <!-- afficher ici les 5 derniers messages reçus -->
+            <ul>
+                <?php foreach ($mails as $mail): ?>
+                    <li>
+                        <a id="lienMess" href="viewMess.php?id_mess=<?= $mail['id_mess']; ?>">
+                            <span id="col1"><?= $mail['date_mail']; ?> </span>
+                            <span id="col2"><?= $mail['objet']; ?> </span>
+                            <span id="col3"><?= $mail['corps_message']; ?></span> <!--trouver comment afficher que le début -->
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </section>
     </main>
 

@@ -13,7 +13,7 @@
         <?php include('header.inc.php'); ?>
     </header>
         
-    <main>
+    <main id="accueil">
         <a class="buttonStyle" href="viewClients.php">Base Client</a>
         <a class="buttonStyle" href="viewMailbox.php">Messagerie</a>
         

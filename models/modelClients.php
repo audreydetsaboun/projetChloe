@@ -20,7 +20,7 @@ catch(Exception $e)
 //renvoi la liste des clients en tableau php
 function getClients(){
     $bddChloe = getBdd();
-    $request = $bddChloe->query('SELECT nom, prenom, mobile FROM FicheClient order by nom');
+    $request = $bddChloe->query('SELECT id_client, nom, prenom, mobile FROM FicheClient order by nom');
     //executer la requete
     $request->execute();
     //récupérer les données et les affecter dans une variable
