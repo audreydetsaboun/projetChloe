@@ -21,8 +21,8 @@
             <!-- <?php // $client['prenom']; ?> <?php // $client['nom']; ?>
             ne fonctionne pas, trouver comment appeler une personne spécifique 
             après avoir cliqué sur sa ligne dans viewClients.php -->
-            <h1 id="prenomClient">Prénom</h1> 
-            <h1 id="nomClient">NOM</h1> 
+            <h1 id="prenomClient"><?= $infosPersos['prenom']; ?></h1> 
+            <h1 id="nomClient"><?= $infosPersos['nom']; ?></h1> 
         </section>
         <section id="boutonsBdd">
             <!-- bouton Modifier client -->
@@ -31,15 +31,15 @@
 
         <!-- SECTION INFO PERSONNELLES-->
         <section id="infosPerso">
-            <p>Fixe : <?= $infosPerso['fixe']; ?></p>
-            <p>Mobile : <?= $infosPerso['mobile']; ?></p>
-            <p>Mail : <?= $infosPerso['mail']; ?></p>
+            <p>Fixe : <?= $infosPersos['fixe']; ?></p>
+            <p>Mobile : <?= $infosPersos['mobile']; ?></p>
+            <p>Mail : <?= $infosPersos['mail']; ?></p>
             <p>adresse : </p>
-            <p><?= $infosPerso['adresse']; ?></p>
-            <p><?= $infosPerso['CP']; ?> <?= $infosPerso['Ville']; ?></p>
+            <p><?= $infosPersos['adresse']; ?></p>
+            <p><?= $infosPersos['CP']; ?> <?= $infosPersos['Ville']; ?></p>
             <!-- rue
             cp + ville -->
-            <p>Particularités : <?= $infosPerso['particularites']; ?></p>
+            <p>Particularités : <?= $infosPersos['particularites']; ?></p>
         </section>
 
         <!-- SECTION FORFAIT-->

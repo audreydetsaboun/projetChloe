@@ -18,11 +18,12 @@ catch(Exception $e)
 
 // SECTION INFOS PERSO
 //renvoi la liste des clients en tableau php
-function getInfosPerso(){
+function getInfosPerso($idClient){
     $bddChloe = getBdd();
-    $request = $bddChloe->query('SELECT nom, prenom, mobile, fixe, mail, adresse, CP, ville, particularites FROM FicheClient');
-    //executer la requete
+    $request = $bddChloe->prepare('SELECT id_client, nom, prenom, mobile, fixe, mail, adresse, CP, ville, particularites FROM FicheClient where idClient = :idClient');
+    $request->bindParam("idClient", $idClient);
     $request->execute();
+    
     //récupérer les données et les affecter dans une variable
     $infosPersos = $request->fetchAll();
     

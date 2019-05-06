@@ -1,4 +1,4 @@
 <?php
 require_once '../models/modelFicheClient.php'; 
-$infosPersos = getInfosPerso();
+$infosPersos = getInfosPerso($_GET['id_client']);
 $mails = getMail();
