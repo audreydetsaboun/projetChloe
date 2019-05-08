@@ -1,0 +1,41 @@
+h1{
+    text-align: center;
+}
+form{
+    border : 1px solid black;
+    box-shadow : 5px 3px 3px #AAA;
+    padding: 2em;
+}
+#textArea {
+    width : 100%;
+}
+
+textarea[name="corpsMessage"], [name="partPeau"]{
+    width : 100%;
+}
+
+input[type="submit"]{
+    padding : 1em;
+    margin : 0 2em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+input[type="submit"]:hover{
+    background-color: #aaa;
+    box-shadow: 2px 2px 3px #bbb;
+}
+.formButton{
+    text-align: center;
+}
+
+p>a{
+    color: #000;
+    text-decoration: none;
+}
+p>a:hover {
+    color: #bbb;
+}
+#retour{
+    padding: 2em;
+    text-align: right;
+}
