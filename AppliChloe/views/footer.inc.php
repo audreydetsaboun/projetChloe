@@ -1,3 +1,7 @@
-<p id="copyright">
-    copyright 2019 A. Detsaboun - Tous droits réservés.
-</p>
+		<footer>
+			<p id="copyright">
+				copyright 2019 A. Detsaboun - Tous droits réservés.
+			</p>
+		</footer>
+	</body>
+</html>
