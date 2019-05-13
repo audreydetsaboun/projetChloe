@@ -55,7 +55,6 @@
             </article>
 
             <!-- appeler ici un forfait s'il y en a un -->
-            <!-- PROBLEME : s'affiche pas au bon endroit mais en tete du document... -->
             <?php echo testForfait($_GET['id_client']); ?>
             
         </section>
@@ -66,8 +65,7 @@
             <!-- bouton ajout nouvelle visite -->
             <a href="???.php"><img id="plus" src="img/Plus.png" alt=""></a>
             <!-- afficher ici les visites qui ont eu lieu -->
-<!-- pour l'instant, affiche toutes les visites -->
-<!-- trouver comment n'afficher que les visites du client consulté -->
+<!-- PROBLEME : ne s'affiche pas s'il y a des visites / affiche la bonne phrase s'il n'y en a pas... -->
             <?php echo getVisites($_GET['id_client']); ?>
             
         </section>

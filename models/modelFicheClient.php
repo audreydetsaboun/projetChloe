@@ -21,7 +21,7 @@ function getInfosPerso($id_client){
 }
 
 //SECTION FORFAIT
-//ici tester s'il y a un forfait en cours pour le client, si oui afficher le forfait 
+// test s'il y a un forfait en cours pour le client, si oui afficher le forfait 
 // si non afficher la phrase "il n'y a pas de forfait en cours pour cette cliente"
 function testForfait($id_client){
     $bddChloe = getBdd();
@@ -53,6 +53,7 @@ function testForfait($id_client){
 
 
 //SECTION VISITES
+//renvoi les visites du client seulement sur la fiche client associée via id client
 function getVisites($id_client){
     $bddChloe = getBdd();
     $request = $bddChloe->prepare('SELECT * FROM VisitesClient WHERE id_client = :id_client');
@@ -60,21 +61,23 @@ function getVisites($id_client){
     $request->execute();
     $visites = $request->fetchall();
 
+    //PROBLEME : ne s'affiche pas s'il y a des visites / affiche la bonne phrase s'il n'y en a pas...
     if($visites){
+        //var_dump($visites);
         foreach ($visites as $visite):
-            $x='';
-            $x .= '<article id="infosVisites>
-                    <p>' . $visite['date_visite'] . '</p>
-                    <p>' . $visite['soin'] . '</p>
-                    <p>' . $visite['achat_produit'] . '</p>
-                    <p>' . $visite['montant_depenses'] . '</p>
-                    <p>' . $visite['promo'] . '</p>
-                    <p>' . $visite['cadeau'] . '</p>
-                    <p>' . $visite['forfait?'] . '</p>
-                </article>';
+            $infosVisites='';
+            $infosVisites .= '<article id="infosVisites>';
+            $infosVisites .= '<p>' . $visite['date_visite'] . '</p>';
+            $infosVisites .= '<p>' . $visite['soin'] . '</p>';
+            $infosVisites .= '<p>' . $visite['achat_produit'] . '</p>';
+            $infosVisites .= '<p>' . $visite['montant_depenses'] . '</p>';
+            $infosVisites .= '<p>' . $visite['promo'] . '</p>';
+            $infosVisites .= '<p>' . $visite['cadeau'] . '</p>';
+            $infosVisites .= '<p>' . $visite['forfait?'] . '</p>';
+            $infosVisites .= '</article>';
+            //var_dump($infosVisites);
+            return $infosVisites;
         endforeach;
-    
-        return $x;
     }else{
         return '<article id="infosVisites"><p>Il n\'y a pas de visites pour cette cliente.</p></article>';
     }
@@ -82,7 +85,7 @@ function getVisites($id_client){
 
 
 //SECTION MESSAGES 
-//trouver comment renvoyer les messages appartenant envoyés seulement au client sur la fiche client associée
+//renvoi les messages appartenant seulement au client sur la fiche client associée via id client
 function getMail($id_client){
     $bddChloe = getBdd();
     //$request = $bddChloe->query('SELECT *, id_client FROM Mail, Messagerie, FicheClient WHERE Messagerie.id_client = FicheClient.id_client AND Mail.id_mail = Messagerie.id_mail');
@@ -91,8 +94,7 @@ function getMail($id_client){
     $request->execute();
     $mails = $request->fetchAll();
     
-
-
+//PROBLEME : ne s'affiche pas s'il y a des mails / affiche la bonne phrase s'il n'y en a pas...
     if($mails){
         //var_dump($mails);
         foreach($mails as $mail){
@@ -102,9 +104,9 @@ function getMail($id_client){
             $listeMail .= '<p>' . $mail['objet'] . '</p>';
             $listeMail .= '</article>';
             //var_dump($listeMail);
+            return $listeMail;
         }
         //var_dump($listeMail);
-        return $listeMail;
     }else{
         return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
     }   
