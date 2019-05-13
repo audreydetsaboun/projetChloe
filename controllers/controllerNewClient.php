@@ -1,12 +1,4 @@
-<!DOCTYPE>
-<html>
-    <head><title>Controleur</title> 
-    <meta charset = "utf-8">
-</head>
-<body>
-
 <?php
-
     $nom = $prenom = $rue = $cp = $ville = $fixe = $mobile = $partPeau = '';
    function securite($donnees){
        $donnees = trim($donnees);
@@ -23,9 +15,9 @@
    $mobile = securite($_POST['mobile']);
    $partPeau = securite($_POST['partPeau']);
 
-   echo '<p>tu t\'appelles ' . $prenom . ' ' . $nom . ' et tu habites ' . $rue . ' ' . $cp . ' ' . $ville .' </p>';
-   echo '<p>on peut te contacter en appelant au ' . $fixe . ' ou au ' . $mobile . '.</p>';
-?>
+   require_once '../models/modelNewClient.php'; 
 
-</body>
-</html>
+   $idClient = ajouterClient($nom, $prenom, $rue, $cp, $ville, $fixe, $mobile, $mail, $partPeau);
+
+   header('location: ../views/viewFicheClient.php?id_client=' . $idClient);
+?>

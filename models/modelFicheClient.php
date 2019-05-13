@@ -2,18 +2,7 @@
 /****** page Model pour accéder à la base de données 
  * et faire une recherche SQL spécifique ******/
  
-try
-{
-	//db connexion
-    function getBdd(){
-        $bdd = new PDO ('mysql:host=localhost;dbname=ChloeBdd;charset=utf8', 'root', 'root');
-        return $bdd;
-    }
-}
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-}
+require_once('dbConnexion.php');
 
 
 // SECTION INFOS PERSO
@@ -39,44 +28,86 @@ function testForfait($id_client){
     $request = $bddChloe->prepare('SELECT * FROM Forfait WHERE id_client = :id_client');
     $request->bindParam('id_client', $id_client);
     $request->execute();
-    $forfait = $request->fetch();
+    $forfaits = $request->fetchall();
     
-    if($forfait){
-        return $forfait;
-        //echo '<h3>' . $forfait['nom_forfait'] .'</h3>'; //changer le format de date 
-        //echo '<p>Date : '. $forfait['date_forfait'] . '</p>';
-        //echo '<p>Zone : ' . $forfait['zone_corps'] . '</p>';
-        //echo '<p>Durée : ' . $forfait['duree_seance'] . ' mn</p>';
-        //echo '<p>Séances : '. $forfait['qte_seances'] . '</p>';
-        //echo '<p>Prises : '. $forfait['qte_effectuee'] . '</p>';
-        //echo '<p>Reste : ' . $forfait['qte_restante'] . '</p>';
-        //echo '<p>Montant : ' . $forfait['prix_forfait'] . '</p>';
-        //echo '<p>Payé : '. $forfait['montant_regle'] . '</p>';
-        //echo '<p>Reste à payer : ' . $forfait['reste_a_payer'] . '</p>';
+    if($forfaits){
+        //return $forfait;
+        foreach($forfaits as $forfait):
+            $infosForfait = '';
+            $infosForfait .= '<article id="infosForfait"><h3>' . $forfait['nom_forfait'] .'</h3>'; //changer le format de date 
+            $infosForfait .=  '<p>Date : '. $forfait['date_forfait'] . '</p>';
+            $infosForfait .=  '<p>Zone : ' . $forfait['zone_corps'] . '</p>';
+            $infosForfait .=  '<p>Durée : ' . $forfait['duree_seance'] . ' mn</p>';
+            $infosForfait .=  '<p>Séances : '. $forfait['qte_seances'] . '</p>';
+            $infosForfait .=  '<p>Prises : '. $forfait['qte_effectuee'] . '</p>';
+            $infosForfait .=  '<p>Reste : ' . $forfait['qte_restante'] . '</p>';
+            $infosForfait .=  '<p>Montant : ' . $forfait['prix_forfait'] . '</p>';
+            $infosForfait .=  '<p>Payé : '. $forfait['montant_regle'] . '</p>';
+            $infosForfait .=  '<p>Reste à payer : ' . $forfait['reste_a_payer'] . '</p></article>';
+            return $infosForfait;
+        endforeach;
     }else{
-        echo 'Il n\'y a pas de forfait en cours pour cette cliente.';
+        return '<article id="infosForfait"><p>Il n\'y a pas de forfait en cours pour cette cliente.</p></article>';
     }
 }
 
 
 //SECTION VISITES
-function getVisites(){
+function getVisites($id_client){
     $bddChloe = getBdd();
-    $request = $bddChloe->query('SELECT * FROM VisitesClient');
+    $request = $bddChloe->prepare('SELECT * FROM VisitesClient WHERE id_client = :id_client');
+    $request->bindParam('id_client', $id_client);
     $request->execute();
-    $visites = $request->fetch();
-    return $visites;
+    $visites = $request->fetchall();
+
+    if($visites){
+        foreach ($visites as $visite):
+            $x='';
+            $x .= '<article id="infosVisites>
+                    <p>' . $visite['date_visite'] . '</p>
+                    <p>' . $visite['soin'] . '</p>
+                    <p>' . $visite['achat_produit'] . '</p>
+                    <p>' . $visite['montant_depenses'] . '</p>
+                    <p>' . $visite['promo'] . '</p>
+                    <p>' . $visite['cadeau'] . '</p>
+                    <p>' . $visite['forfait?'] . '</p>
+                </article>';
+        endforeach;
+    
+        return $x;
+    }else{
+        return '<article id="infosVisites"><p>Il n\'y a pas de visites pour cette cliente.</p></article>';
+    }
 }
 
 
 //SECTION MESSAGES 
 //trouver comment renvoyer les messages appartenant envoyés seulement au client sur la fiche client associée
-function getMail(){
+function getMail($id_client){
     $bddChloe = getBdd();
-    $request = $bddChloe->query('SELECT id_mail, date_mail, date_differee, objet, corps_message FROM Mail');
+    //$request = $bddChloe->query('SELECT *, id_client FROM Mail, Messagerie, FicheClient WHERE Messagerie.id_client = FicheClient.id_client AND Mail.id_mail = Messagerie.id_mail');
+    $request = $bddChloe->prepare('SELECT m.* from mail m inner join Messagerie mg on mg.id_mail=m.id_mail where mg.id_client=:id_client');
+    $request->bindParam('id_client', $id_client);
     $request->execute();
     $mails = $request->fetchAll();
-    return $mails;
+    
+
+
+    if($mails){
+        //var_dump($mails);
+        foreach($mails as $mail){
+            $listeMail='';
+            $listeMail .= '<article id="infosMail>';
+            $listeMail .= '<p>' . $mail['date_mail'] . '</p>';
+            $listeMail .= '<p>' . $mail['objet'] . '</p>';
+            $listeMail .= '</article>';
+            //var_dump($listeMail);
+        }
+        //var_dump($listeMail);
+        return $listeMail;
+    }else{
+        return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
+    }   
 }
 
 function getTexto(){
