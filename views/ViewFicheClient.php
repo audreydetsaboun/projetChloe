@@ -28,7 +28,9 @@
 
         <section id="boutonsBdd">
             <!-- bouton Modifier client -->
-            <a  href="???"><img id="btnModif" id="modif" src="img/btn_modif.png" alt=""></a>
+            <a  href="?id_client=<?= $infosPersos['id_client']; ?>&action=modifier"><img id="btnModif" id="modif" src="img/btn_modif.png" alt=""></a>
+            <?php echo $_GET['action'];
+            ?>
         </section>
 
         <!-- SECTION INFO PERSONNELLES-->
