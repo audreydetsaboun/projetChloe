@@ -24,6 +24,29 @@
         $bddChloe->exec($sql);
 
         return $bddChloe->lastInsertId();
+    }    
+    
+    /* Modifier un client */
+    function modifierClient($idClient, $nom, $prenom, $rue, $cp, $ville, $fixe, $mobile, $mail, $partPeau){
+        $bddChloe = getBdd();
+
+        $sql = "UPDATE FicheClient SET
+			nom ='$nom',
+			prenom ='$prenom',
+			adresse ='$rue',
+			CP ='$cp',
+			Ville ='$ville',
+			fixe ='$fixe',
+			mobile ='$mobile',
+			mail ='$mail',
+			particularites ='$partPeau'
+			
+			WHERE id_client = $idClient
+		";
+
+        $bddChloe->exec($sql);
+
+        return $idClient;
     }
 
 ?>
