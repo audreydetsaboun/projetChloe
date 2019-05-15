@@ -1,17 +1,5 @@
 <?php
-    try
-    {
-        //db connexion
-        function getBdd(){
-            $bdd = new PDO ('mysql:host=localhost;dbname=ChloeBdd;charset=utf8', 'root', 'root');
-            return $bdd;
-        }
-    }
-    catch(Exception $e)
-    {
-            die('Erreur : '.$e->getMessage());
-    }
-    
+    require_once('dbConnexion.php');
     
     
     //ajouter un nouveau client
@@ -50,6 +38,15 @@
     }
     
     // Supprimer un client
+    function getIdClient($id_client){
+        $bddChloe = getBdd();
+        $request = $bddChloe->prepare('SELECT id_client FROM FicheClient where id_client = :id_client');
+        $request->bindParam("id_client", $id_client);
+        $request->execute();
+        $idClient = $request->fetch();
+        return $idClient;
+    }
+
     function supprimerClient($idClient){
         $bddChloe = getBdd();
 

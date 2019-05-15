@@ -1,5 +1,4 @@
 <?php require_once '../controllers/controllerDeleteClient.php' ?>
-<?php //require_once '../controllers/controllerFicheClient.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
