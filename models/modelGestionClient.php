@@ -48,5 +48,12 @@
 
         return $idClient;
     }
+    
+    // Supprimer un client
+    function supprimerClient($idClient){
+        $bddChloe = getBdd();
+
+        $sql = "DELETE FROM FicheClient WHERE id_client = $idClient";
+    }
 
 ?>

@@ -28,7 +28,9 @@
 
         <section id="boutonsBdd">
             <!-- bouton Modifier client -->
-            <a  href="?id_client=<?= $infosPersos['id_client']; ?>&action=modifier"><img id="btnModif" id="modif" src="img/btn_modif.png" alt=""></a>
+            <a  href="?id_client=<?= $infosPersos['id_client']; ?>&action=modifier">
+                <img id="btnModif" id="modif" src="img/btn_modif.png" alt="">
+            </a>
         </section>
 			<?php 
 				if(isset($_GET['action'])){
@@ -41,14 +43,17 @@
 
         <!-- boutton de retour en arrière -->
         <p class="btnRetourn">
-        <a class="retour" href="viewClients.php"><img src="img/retour.png" alt="retour"></a>
+            <a class="retour" href="viewClients.php">
+            <img src="img/retour.png" alt="retour"></a>
         </p>
 
         <!-- boutton supprimer -->
-        <!-- trouver comment supprimer en SQL à partir de cette page-->
         <p id="btnSupprimer">
-            <img id="supprimer" src="img/poubelle.png" alt="supprimer fiche client">
+            <a href="viewSupprimerClient.php">
+                <img id="supprimer" src="img/poubelle.png" alt="supprimer fiche client">
+            </a>
         </p>
+        
 
     <footer>
         <?php include('footer.inc.php'); ?>
