@@ -19,8 +19,8 @@
         </section>
 
         <section id="section2">
-            <h1 id="prenomClient"><?= $idClient['prenom']; ?></h1> 
-            <h1 id="nomClient"><?= $idClient['nom']; ?></h1> 
+        <h1 id="prenomClient"><?= $infosPersos['prenom']; ?></h1> 
+            <h1 id="nomClient"><?= $infosPersos['nom']; ?></h1> 
         </section>
 
         <section id="section3">

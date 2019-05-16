@@ -22,7 +22,7 @@
         
 
         <section id="nom">
-            <h1 id="prenomClient"><?= $infosPersos['prenom']; ?></h1> 
+            <h1 id="prenomClient"><?= $infosPersos['prenom'];?></h1> 
             <h1 id="nomClient"><?= $infosPersos['nom']; ?></h1> 
         </section>
 
@@ -49,7 +49,7 @@
 
         <!-- boutton supprimer -->
         <p id="btnSupprimer">
-            <a href="viewSupprimerClient.php">
+        <a href="viewSupprimerClient.php?id_client=<?= $infosPersos['id_client']; ?>">
                 <img id="supprimer" src="img/poubelle.png" alt="supprimer fiche client">
             </a>
         </p>
