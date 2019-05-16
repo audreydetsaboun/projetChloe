@@ -13,5 +13,5 @@
 
 
    header('location: ../views/viewClients.php');
-   //print("Fiche Client effacée !");
+   
 ?>
