@@ -19,7 +19,7 @@
 
         <div id="boutonsBdd">
             <!-- bouton ajout nouveau client -->
-            <a href="new_customer.php"><img id="plus" src="img/Plus.png" alt=""></a>
+            <a href="viewNewClient.php"><img id="plus" src="img/Plus.png" alt=""></a>
 
             <!-- bouton exportation BDD-->
             <a href="export_db.php"><img id="dl" src="img/dl.png" alt=""></a>
