@@ -14,7 +14,7 @@
             ===>>> TROUVER COMMENT LA METTRE AUTOMATIQUEMENT-->
             <p>
                 <label for="date">date :</label>    
-                <input type="date" id="date" name="date" autofocus> 
+                <!--<input type="date" id="date" name="date" autofocus> -->
                 <?= date('d/m/Y'); ?>
             </p>    
 
@@ -32,30 +32,30 @@
                 </p>
                 <p>
                     <label for="adresse">rue :</label>    
-                    <input type="text" id="rue" name="rue" required>
+                    <input type="text" id="rue" name="rue" >
                 </p>
                 <p>
                     <label for="cp">CP :</label>    
-                    <input type="text" id="cp" name="cp" required>
+                    <input type="text" id="cp" name="cp" >
                 </p>
                 <p>
                     <label for="ville">ville :</label>    
-                    <input type="text" id="ville" name="ville" required>
+                    <input type="text" id="ville" name="ville" >
                 </p>
                 <p>
                     <label for="fixe">téléphone fixe :</label>    
-                    <input type="text" id="fixe" name="fixe" required>
+                    <input type="text" id="fixe" name="fixe" >
                 </p>
                 <p>
                     <label for="mobile">mobile :</label>    
-                    <input type="text" id="mobile" name="mobile" required>
+                    <input type="text" id="mobile" name="mobile" >
                 </p>
                 <!-- -->
                 <p class="textArea">
                 <label for="partPeau">Particularités de peau :</label>  
                 </p>
                 <p>  
-                <textarea name="partPeau" id="partPeau" cols="30" rows="10" required></textarea>
+                <textarea name="partPeau" id="partPeau" cols="30" rows="10" ></textarea>
                 </p>
             </fieldset>
 
