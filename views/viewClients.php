@@ -13,6 +13,12 @@
     <header>
         <?php include('header.inc.php'); ?>
     </header>
+    <?php
+    //trouvé une condition pour que ce message ne s'affiche que lors d'une 
+    //redirection apres effacement d'une fiche client
+    
+        //include('../models/messageDelete.inc.php');
+    ?>
             
     <main id="mainClients"> 
         <h1 id="titreBdd">Fichier Clients</h1> 

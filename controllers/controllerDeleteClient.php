@@ -11,7 +11,7 @@
   // supprimerClient($idClient);
    supprimerClient($infosPersos);
 
-
+   header('Fiche client effacée !'); //message n'apparait pas
    header('location: ../views/viewClients.php');
    
 ?>
