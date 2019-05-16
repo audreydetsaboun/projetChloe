@@ -20,7 +20,7 @@
             <a class="retour" href="viewClients.php"><img src="img/retour.png" alt="retour"></a>
         </p>
         
-<!--  objectif : récupérer le parametre id_client dans l'url-->
+
         <section id="nom">
             <h1 id="prenomClient"><?= $infosPersos['prenom']; ?></h1> 
             <h1 id="nomClient"><?= $infosPersos['nom']; ?></h1> 

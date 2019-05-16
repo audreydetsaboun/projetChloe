@@ -51,6 +51,7 @@
         $bddChloe = getBdd();
 
         $sql = "DELETE FROM FicheClient WHERE id_client = $idClient";
+        return $sql;
     }
 
 ?>

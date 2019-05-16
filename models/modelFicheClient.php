@@ -18,6 +18,7 @@ function getInfosPerso($id_client){
     
     //retourner un tableau avec les clients
     return $infosPersos;
+
 }
 
 //SECTION FORFAIT
