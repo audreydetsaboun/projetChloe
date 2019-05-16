@@ -46,16 +46,7 @@
         $idClient = $request->fetch();
         return $idClient;
     }
-/*
-    function supprimerClient($idClient){
-        $bddChloe = getBdd();
 
-        $sql = $bddChloe->query("DELETE * FROM FicheClient WHERE id_client = '$idClient'");
-        
-        print("Fiche Client effacée !");
-        
-    }
-*/
     function supprimerClient($idClient){
         print_r($idClient, true);
         $bddChloe = getBdd();
@@ -63,7 +54,7 @@
         $request = $bddChloe->prepare("DELETE FROM ficheClient WHERE id_client = :id_client");
         $request->bindParam("id_client", $idClient['id_client']);
         $res = $request->execute();
-        print("Fiche Client effacée !");
+        //print("Fiche Client effacée !");
         return $res;
     }
 

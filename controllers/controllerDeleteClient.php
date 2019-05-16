@@ -12,5 +12,6 @@
    supprimerClient($infosPersos);
 
 
-   //header('location: ../views/viewFicheClient.php?id_client=' . $idClient);
+   header('location: ../views/viewClients.php');
+   //print("Fiche Client effacée !");
 ?>
