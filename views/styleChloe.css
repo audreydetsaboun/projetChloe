@@ -31,11 +31,6 @@ menu{
     flex: 1;
 }
 @media(max-width:664px){
-    menu{
-        display: column;
-        flex-wrap: wrap;
-        align-content: left;
-    }
     #nomUser{
         order:2;
     }
@@ -145,6 +140,7 @@ main {
     #col3{
         display: none;
     }
+}
 
 /* MAIN FICHE CLIENT */
 #mainFC{
