@@ -211,6 +211,9 @@ section{
 #messRecus{
     order:5;
 }
+.infosMail{
+    margin: 0 2em;
+}
 .btnRetourn{
     margin: 1em;
     text-align: right;

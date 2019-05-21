@@ -90,28 +90,29 @@ function getVisites($id_client){
 function getMail($id_client){
     $bddChloe = getBdd();
     //$request = $bddChloe->query('SELECT *, id_client FROM Mail, Messagerie, FicheClient WHERE Messagerie.id_client = FicheClient.id_client AND Mail.id_mail = Messagerie.id_mail');
-    $request = $bddChloe->prepare('SELECT m.* from mail m inner join Messagerie mg on mg.id_mail=m.id_mail where mg.id_client=:id_client');
+    $request = $bddChloe->prepare('SELECT m.* FROM mail m INNER JOIN Messagerie mg ON mg.id_mail=m.id_mail WHERE mg.id_client=:id_client ORDER BY m.date_mail DESC');
     $request->bindParam('id_client', $id_client);
     $request->execute();
     $mails = $request->fetchAll();
-    
-//PROBLEME : ne s'affiche pas s'il y a des mails / affiche la bonne phrase s'il n'y en a pas...
-    if($mails){
-        //var_dump($mails);
+
+    if(!empty($mails)){
+        
         foreach($mails as $mail){
-            $listeMail='';
-            $listeMail .= '<article id="infosMail>';
-            $listeMail .= '<p>' . $mail['date_mail'] . '</p>';
-            $listeMail .= '<p>' . $mail['objet'] . '</p>';
+            $listeMail = '';
+            $listeMail .= '<article class="articleMail>';
+            $listeMail .= '<span class="infosMail">' . $mail['date_mail'] . '</span>';
+            $listeMail .= '<span class="infosMail">' . $mail['objet'] . '</span>';
             $listeMail .= '</article>';
             //var_dump($listeMail);
-            return $listeMail;
+            echo $listeMail;  
         }
-        //var_dump($listeMail);
     }else{
         return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
-    }   
-}
+        }
+    }
+
+
+
 
 function getTexto(){
     $bddChloe = getBdd();
@@ -120,9 +121,10 @@ function getTexto(){
     $textos = $request->fetchAll();
     return $textos;
 }
+/*
 function getMessages(){
     getMail();
     getTexto();
-}
+}*/
 ?>
 
