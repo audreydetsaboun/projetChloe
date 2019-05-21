@@ -12,7 +12,7 @@ if (session_status() == PHP_SESSION_NONE) {
    supprimerClient($infosPersos);
 
 //   header('Fiche client effacée !'); //message n'apparait pas
-    $_SESSION["flash"] = "<center>Fiche client de " . $infosPersos['prenom'] . ' ' . $infosPersos['nom'] . " effacée !</center>"  ;
+    $_SESSION["flash"] = '<p class="delete"> Fiche client de ' . $infosPersos['prenom'] . ' ' . $infosPersos['nom'] . " effacée !</p>"  ;
    header('location: ../views/viewClients.php');
    
 ?>

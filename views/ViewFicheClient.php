@@ -25,16 +25,14 @@ require_once '../controllers/controllerFicheClient.php' ?>
         </p>
         
 
-        <section id="nom">
+        <section class="infoPersoContainer" id="nom">
             <h1 id="prenomClient"><?= $infosPersos['prenom'];?></h1> 
             <h1 id="nomClient"><?= $infosPersos['nom']; ?></h1> 
-        </section>
-
-        <section id="boutonsBdd">
             <!-- bouton Modifier client -->
             <a  href="?id_client=<?= $infosPersos['id_client']; ?>&action=modifier">
                 <img id="btnModif" id="modif" src="img/btn_modif.png" alt="">
             </a>
+            
         </section>
 			<?php 
 				if(isset($_GET['action'])){

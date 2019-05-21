@@ -17,32 +17,31 @@
     <main id="mainMessagerie">
         <h1>Messagerie</h1>
 
-        <p class="boutons">
-            <div id="aside1">
+        <div class="boutons">
                 <a id="mail" class="buttonStyle" href="ViewNewMail.php">envoi mail</a>
-            </div>
-            <div id="aside2">
                 <a id="texto" class="buttonStyle" href="new_text.php">envoi sms</a>
-            </div>
-        </p>
+        </div>
 
-        <h2>Messages envoyés</h2>
-        <table id="messages">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Objet</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($messages as $message): ?>
-                <tr>
-                    <td><?= $message['date_mail']; ?></td>
-                    <td><?= $message['objet']; ?></td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+        <div class="messages">
+
+            <h2>Messages envoyés</h2>
+            <table id="messages">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Objet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($messages as $message): ?>
+                    <tr>
+                        <td><?= $message['date_mail']; ?></td>
+                        <td><?= $message['objet']; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
 
     </main>
 

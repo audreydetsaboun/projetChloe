@@ -24,31 +24,31 @@
 
                 <p>
                     <label for="nom">nom :</label>    
-                    <input type="text" id="nom" name="nom" required>
+                    <input id="nameField" class="renseignement" type="text" id="nom" name="nom" required>
                 </p>
                 <p>
                     <label for="prenom">prénom :</label>    
-                    <input type="text" id="prenom" name="prenom" required>
+                    <input class="renseignement" type="text" id="prenom" name="prenom" required>
                 </p>
                 <p>
                     <label for="adresse">rue :</label>    
-                    <input type="text" id="rue" name="rue" >
+                    <input class="renseignement" type="text" id="rue" name="rue" >
                 </p>
                 <p>
                     <label for="cp">CP :</label>    
-                    <input type="text" id="cp" name="cp" >
+                    <input class="renseignement" type="text" id="cp" name="cp" >
                 </p>
                 <p>
                     <label for="ville">ville :</label>    
-                    <input type="text" id="ville" name="ville" >
+                    <input class="renseignement" type="text" id="ville" name="ville" >
                 </p>
                 <p>
                     <label for="fixe">téléphone fixe :</label>    
-                    <input type="text" id="fixe" name="fixe" >
+                    <input class="renseignement" type="text" id="fixe" name="fixe" >
                 </p>
                 <p>
                     <label for="mobile">mobile :</label>    
-                    <input type="text" id="mobile" name="mobile" >
+                    <input class="renseignement" type="text" id="mobile" name="mobile" >
                 </p>
                 <!-- -->
                 <p class="textArea">
@@ -71,6 +71,9 @@
             <a class="buttonStyle" href="viewMailbox.php">Retour</a>
         </p>
         
+        <script type="text/javascript">
+            document.getElementById('nameField').focus()
+        </script>
     </body>
 
 </html>

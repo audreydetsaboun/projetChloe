@@ -44,8 +44,8 @@ require_once '../controllers/controllerClient.php' ?>
         <!--barre de recherche-->
         <!--https://informagenie.com/1693/barre-de-recherche-site-php-mysql/-->
         <form name="recherche" id="rechClient">
-            <input type="search" placeholder="Rechercher..." name="barreRecherche" id="" value=""/>
-            <input type="button" onclick="" value="ok">
+            <input class="barreRech" type="search" placeholder="Rechercher..." name="barreRecherche" id="" value=""/>
+            <input class="barreRech" type="button" onclick="" value="ok">
         </form>
 
         <!-- liste des clients -->
