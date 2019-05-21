@@ -82,6 +82,8 @@
 	<section id="messRecus">
 		<h2>Messages reçus</h2>
 		<!-- afficher ici les 5 derniers messages reçus -->
+		
 		<?php echo getMail($_GET['id_client']);?>
+		
 		
 	</section>

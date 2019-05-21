@@ -99,12 +99,13 @@ function getMail($id_client){
         
         foreach($mails as $mail){
             $listeMail = '';
+            $listeMail .= '<a id="lienFC" href="viewMailbox.php">';
             $listeMail .= '<article class="articleMail>';
             $listeMail .= '<span class="infosMail">' . $mail['date_mail'] . '</span>';
             $listeMail .= '<span class="infosMail">' . $mail['objet'] . '</span>';
-            $listeMail .= '</article>';
+            $listeMail .= '</article></a>';
             //var_dump($listeMail);
-            echo $listeMail;  
+            echo $listeMail;
         }
     }else{
         return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
