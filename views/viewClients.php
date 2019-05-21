@@ -1,6 +1,13 @@
-<?php require_once '../controllers/controllerClient.php' ?>
+<?php 
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once '../controllers/controllerClient.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +23,10 @@
     <?php
     //trouvé une condition pour que ce message ne s'affiche que lors d'une 
     //redirection apres effacement d'une fiche client
-    
+    if(isset($_SESSION["flash"]) && $_SESSION["flash"])  {
+        echo $_SESSION["flash"];
+        unset($_SESSION["flash"]);
+    }
         //include('../models/messageDelete.inc.php');
     ?>
             

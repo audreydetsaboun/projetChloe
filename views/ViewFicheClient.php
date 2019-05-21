@@ -1,4 +1,8 @@
-<?php require_once '../controllers/controllerFicheClient.php' ?>
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+require_once '../controllers/controllerFicheClient.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
