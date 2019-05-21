@@ -81,12 +81,12 @@ main {
         /*justify-content: space-around; ne fonctionne pas! */
 
     }
-    .buttonStyle{
-        /*flex-basis: 50%; ne fonctionne pas! */
-        /*width: 50%; enlevé car reste à gauche et je ne trouve pas comment le centrer*/
-        /*justify-content: space-around; ne fonctionne pas! */
+    /*.buttonStyle{
+        flex-basis: 50%; ne fonctionne pas! 
+        width: 50%; enlevé car reste à gauche et je ne trouve pas comment le centrer
+        justify-content: space-around; ne fonctionne pas! 
 
-    }
+    }*/
 }
 
 
@@ -330,8 +330,9 @@ footer{
     margin-top : 5em;
     font-style: italic;
 }
+/* 
 #copyright{
-    /* je voudrais le fixer en bas je n'y arrive pas*/
-    /*align-items: flex-end; ne fonctionne pas*/
-}
+    je voudrais le fixer en bas je n'y arrive pas
+    align-items: flex-end; ne fonctionne pas
+}*/
 
