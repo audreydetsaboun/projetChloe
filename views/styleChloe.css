@@ -236,6 +236,13 @@ section{
     margin : 2em;
     text-align: center;
 }
+#btnSupprimer:hover{
+    filter: invert(0);
+        -webkit-filter: invert(0);
+        -moz-filter: invert(0);
+        -o-filter: invert(0);
+        -ms-filter: invert(0);
+}
 #supprimer {
     width : 15%;
 }
