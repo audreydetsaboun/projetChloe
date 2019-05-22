@@ -1,5 +1,5 @@
 	<!-- SECTION INFO PERSONNELLES-->
-	<section id="infosPerso">
+	<section class ="secFC"  id="infosPerso">
 		<!-- Fixe -->
 		<p> 
 			<?php 
@@ -54,7 +54,7 @@
 	</section>
 
 	<!-- SECTION FORFAIT-->
-	<section id="forfait">
+	<section class ="secFC"  id="forfait">
 		<h2>Forfait </h2>
 		<article id="boutonsBdd">
 			<!-- bouton Modifier client -->
@@ -69,7 +69,7 @@
 	</section>
 
 	<!-- SECTION VISITES-->
-	<section id="visites">
+	<section class ="secFC"  id="visites">
 		<h2>Visites</h2>
 		<!-- bouton ajout nouvelle visite -->
 		<a href="???.php"><img id="plus" src="img/Plus.png" alt=""></a>
@@ -79,7 +79,7 @@
 	</section>
 
 	<!-- SECTION MESSAGES-->
-	<section id="messRecus">
+	<section class ="secFC" id="messRecus">
 		<h2>Messages reçus</h2>
 		<!-- afficher ici les 5 derniers messages reçus -->
 		

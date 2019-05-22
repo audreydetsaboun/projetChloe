@@ -195,6 +195,7 @@ section{
     margin-bottom: 2em;
     border-radius: 7px;
 }
+
 .boldy{
     font-weight: bold; 
 }
@@ -221,7 +222,7 @@ section{
 #messRecus{
     order:5;
 }
-.infosMail{
+.infosMail, .infosVisites{
     margin: 0 2em;
 }
 .btnRetourn{

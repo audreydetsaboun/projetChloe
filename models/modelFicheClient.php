@@ -57,32 +57,27 @@ function testForfait($id_client){
 //renvoi les visites du client seulement sur la fiche client associée via id client
 function getVisites($id_client){
     $bddChloe = getBdd();
-    $request = $bddChloe->prepare('SELECT * FROM VisitesClient WHERE id_client = :id_client');
+    $request = $bddChloe->prepare('SELECT * FROM VisitesClient WHERE id_client = :id_client ORDER BY date_visite DESC');
     $request->bindParam('id_client', $id_client);
     $request->execute();
     $visites = $request->fetchall();
 
-    //PROBLEME : ne s'affiche pas s'il y a des visites / affiche la bonne phrase s'il n'y en a pas...
-    if($visites){
-        //var_dump($visites);
-        foreach ($visites as $visite):
-            $infosVisites='';
-            $infosVisites .= '<article id="infosVisites>';
-            $infosVisites .= '<p>' . $visite['date_visite'] . '</p>';
-            $infosVisites .= '<p>' . $visite['soin'] . '</p>';
-            $infosVisites .= '<p>' . $visite['achat_produit'] . '</p>';
-            $infosVisites .= '<p>' . $visite['montant_depenses'] . '</p>';
-            $infosVisites .= '<p>' . $visite['promo'] . '</p>';
-            $infosVisites .= '<p>' . $visite['cadeau'] . '</p>';
-            $infosVisites .= '<p>' . $visite['forfait?'] . '</p>';
-            $infosVisites .= '</article>';
-            //var_dump($infosVisites);
-            return $infosVisites;
-        endforeach;
+    if(!empty($visites)){
+        //echo '<br/><span  class="infosVisites">Date</span <span class="infosVisites">Soin</span> <span class="infosVisites"></span><span class="infosVisites">Montant dépensé</span>';
+        foreach($visites as $visite){
+            $infosVisites = '';
+            $infosVisites .= '<a id="lienFC" href="FicheClient.php">';
+            $infosVisites .= '<article class="articleVisite>';
+            $infosVisites .= '<span class="infosVisites">' . $visite['date_visite'] . '</span>';
+            $infosVisites .= '<span class="infosVisites">' . $visite['soin'] . '</span>';
+            $infosVisites .= '<span class="infosVisites">' . $visite['montant_depenses'] . ' euros</span>';
+            $infosVisites .= '</article></a>';
+        echo $infosVisites;
+        }
     }else{
-        return '<article id="infosVisites"><p>Il n\'y a pas de visites pour cette cliente.</p></article>';
+        return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
+        }
     }
-}
 
 
 //SECTION MESSAGES 
@@ -95,8 +90,7 @@ function getMail($id_client){
     $request->execute();
     $mails = $request->fetchAll();
 
-    if(!empty($mails)){
-        
+    if(!empty($mails)){ 
         foreach($mails as $mail){
             $listeMail = '';
             $listeMail .= '<a id="lienFC" href="viewMailbox.php">';
