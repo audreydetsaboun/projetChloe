@@ -84,7 +84,6 @@ function getVisites($id_client){
 //renvoi les messages appartenant seulement au client sur la fiche client associée via id client
 function getMail($id_client){
     $bddChloe = getBdd();
-    //$request = $bddChloe->query('SELECT *, id_client FROM Mail, Messagerie, FicheClient WHERE Messagerie.id_client = FicheClient.id_client AND Mail.id_mail = Messagerie.id_mail');
     $request = $bddChloe->prepare('SELECT m.* FROM mail m INNER JOIN Messagerie mg ON mg.id_mail=m.id_mail WHERE mg.id_client=:id_client ORDER BY m.date_mail DESC');
     $request->bindParam('id_client', $id_client);
     $request->execute();
@@ -98,7 +97,7 @@ function getMail($id_client){
             $listeMail .= '<span class="infosMail">' . $mail['date_mail'] . '</span>';
             $listeMail .= '<span class="infosMail">' . $mail['objet'] . '</span>';
             $listeMail .= '</article></a>';
-            //var_dump($listeMail);
+            
             echo $listeMail;
         }
     }else{
@@ -108,7 +107,7 @@ function getMail($id_client){
 
 
 
-
+//à finaliser...
 function getTexto(){
     $bddChloe = getBdd();
     $request = $bddChloe->query('SELECT texto, date_texto, date_differee, corps_message FROM Texto');
