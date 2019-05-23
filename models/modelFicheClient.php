@@ -32,7 +32,6 @@ function testForfait($id_client){
     $forfaits = $request->fetchall();
     
     if($forfaits){
-        //return $forfait;
         foreach($forfaits as $forfait):
             $infosForfait = '';
             $infosForfait .= '<article id="infosForfait"><h3>' . $forfait['nom_forfait'] .'</h3>'; //changer le format de date 
@@ -63,21 +62,20 @@ function getVisites($id_client){
     $visites = $request->fetchall();
 
     if(!empty($visites)){
-        //echo '<br/><span  class="infosVisites">Date</span <span class="infosVisites">Soin</span> <span class="infosVisites"></span><span class="infosVisites">Montant dépensé</span>';
+        $infosVisites='';
         foreach($visites as $visite){
-            $infosVisites = '';
+            $infosVisites .= '<p>';
             $infosVisites .= '<a id="lienFC" href="FicheClient.php">';
             $infosVisites .= '<article class="articleVisite>';
             $infosVisites .= '<span class="infosVisites">' . $visite['date_visite'] . '</span>';
             $infosVisites .= '<span class="infosVisites">' . $visite['soin'] . '</span>';
             $infosVisites .= '<span class="infosVisites">' . $visite['montant_depenses'] . ' euros</span>';
-            $infosVisites .= '</article></a>';
-            echo $infosVisites;// affiche les infos 2 fois : 1 fois en haut de la page et 1 fois là où je veux
-       // return $infosVisites;// n'affiche les infos que sur un seul tour au lieu d'afficher toutes les lignes
-    }
-    }else{
-        return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
+            $infosVisites .= '</article></a></p>';
         }
+        }else{
+            return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
+        }
+        return $infosVisites;
     }
 
 
@@ -91,19 +89,19 @@ function getMail($id_client){
     $mails = $request->fetchAll();
 
     if(!empty($mails)){ 
+        $listeMail = '';
         foreach($mails as $mail){
-            $listeMail = '';
+            $listeMail .= '<p>';
             $listeMail .= '<a id="lienFC" href="viewMailbox.php">';
             $listeMail .= '<article class="articleMail>';
             $listeMail .= '<span class="infosMail">' . $mail['date_mail'] . '</span>';
             $listeMail .= '<span class="infosMail">' . $mail['objet'] . '</span>';
-            $listeMail .= '</article></a>';
-            echo $listeMail; // affiche les infos 2 fois : 1 fois en haut de la page et 1 fois là où je veux
-            //return $listeMail; // n'affiche les infos que sur un seul tour au lieu d'afficher toutes les lignes 
+            $listeMail .= '</article></a></p>';
         }
-    }else{
-        return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
+        }else{
+            return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
         }
+        return $listeMail;
     }
 
 
