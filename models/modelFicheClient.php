@@ -73,8 +73,8 @@ function getVisites($id_client){
             $infosVisites .= '<span class="infosVisites">' . $visite['montant_depenses'] . ' euros</span>';
             $infosVisites .= '</article></a>';
             echo $infosVisites;// affiche les infos 2 fois : 1 fois en haut de la page et 1 fois là où je veux
-        return $infosVisites;// n'affiche les infos que sur un seul tour au lieu d'afficher toutes les lignes
-        }
+       // return $infosVisites;// n'affiche les infos que sur un seul tour au lieu d'afficher toutes les lignes
+    }
     }else{
         return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
         }
@@ -99,7 +99,7 @@ function getMail($id_client){
             $listeMail .= '<span class="infosMail">' . $mail['objet'] . '</span>';
             $listeMail .= '</article></a>';
             echo $listeMail; // affiche les infos 2 fois : 1 fois en haut de la page et 1 fois là où je veux
-            return $listeMail; // n'affiche les infos que sur un seul tour au lieu d'afficher toutes les lignes 
+            //return $listeMail; // n'affiche les infos que sur un seul tour au lieu d'afficher toutes les lignes 
         }
     }else{
         return '<article id="infosMail"><p>Il n\'y a pas de mails pour cette cliente.</p></article>';
