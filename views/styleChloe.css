@@ -247,6 +247,14 @@ section{
     width : 15%;
 }
 /* MODIFIER CLIENT */
+form{
+    border : 1px solid #50546C;
+    box-shadow : 5px 3px 3px #AAA;
+    padding: 1em;
+    background-color: rgb(255, 238, 255);
+    border-radius: 7px;
+    color: #50546C;
+}
 #textArea {
     width : 100%;
 }
@@ -263,7 +271,8 @@ p.formButton input[type="submit"]{
     padding: 1em;
     font-weight: bold;
     border-radius: 5px;
-    background-color: rgb(255, 238, 255); 
+    background-color: rgb(179, 181, 189);
+    color: #50546C; 
 }
 
 /* MAIN SUPPRIMER CLIENT */
