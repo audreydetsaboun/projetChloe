@@ -1,31 +1,33 @@
 <?php
 /****** page Model pour accéder à la base de données ******/
 
-//try catch
-try
-{
-	//db connexion
-    function getBdd(){
-        $bdd = new PDO ('mysql:host=localhost;dbname=ChloeBdd;charset=utf8', 'root', 'root');
-        return $bdd;
-    }
-}
-catch(Exception $e)
-{
-    die('Erreur : '.$e->getMessage());
-}
+require_once('dbConnexion.php');
+
 
 //renvoi la liste des clients en tableau php
-function getMessages(){
+function getMails(){
     $bddChloe = getBdd();
-    $request = $bddChloe->query('SELECT date_mail, objet FROM Mail order by date_mail');
+    $request = $bddChloe->prepare('SELECT date_mail, objet FROM Mail order by date_mail');
     //executer la requete
     $request->execute();
     //récupérer les données et les affecter dans une variable
-    $messages = $request->fetchAll();
+    $mails = $request->fetchAll();
 
     //retourner un tableau avec les clients
-    return $messages;
+    return $mails;
 }
+function getTextos(){
+    $bddChloe = getBdd();
+    $request = $bddChloe->prepare('SELECT date_texto, corps_message FROM Texto order by date_texto');
+    //executer la requete
+    $request->execute();
+    //récupérer les données et les affecter dans une variable
+    $textos = $request->fetchAll();
+
+    //retourner un tableau avec les clients
+    return $textos;
+}
+
+
 
 ?>

@@ -35,7 +35,7 @@ function testForfait($id_client){
         foreach($forfaits as $forfait):
             $infosForfait = '';
             $infosForfait .= '<article id="infosForfait"><h3>' . $forfait['nom_forfait'] .'</h3>'; //changer le format de date 
-            $infosForfait .=  '<p>Date : '. $forfait['date_forfait'] . '</p>';
+            $infosForfait .=  '<p>Date : '. date('d/m/Y',strtotime($forfait['date_forfait'])) . '</p>';
             $infosForfait .=  '<p>Zone : ' . $forfait['zone_corps'] . '</p>';
             $infosForfait .=  '<p>Durée : ' . $forfait['duree_seance'] . ' mn</p>';
             $infosForfait .=  '<p>Séances : '. $forfait['qte_seances'] . '</p>';
@@ -67,7 +67,7 @@ function getVisites($id_client){
             $infosVisites .= '<p>';
             $infosVisites .= '<a id="lienFC" href="FicheClient.php">';
             $infosVisites .= '<article class="articleVisite>';
-            $infosVisites .= '<span class="infosVisites">' . $visite['date_visite'] . '</span>';
+            $infosVisites .= '<span class="infosVisites">' . date('d/m/Y',strtotime($visite['date_visite'])) . '</span>';
             $infosVisites .= '<span class="infosVisites">' . $visite['soin'] . '</span>';
             $infosVisites .= '<span class="infosVisites">' . $visite['montant_depenses'] . ' euros</span>';
             $infosVisites .= '</article></a></p>';
@@ -94,7 +94,7 @@ function getMail($id_client){
             $listeMail .= '<p>';
             $listeMail .= '<a id="lienFC" href="viewMailbox.php">';
             $listeMail .= '<article class="articleMail>';
-            $listeMail .= '<span class="infosMail">' . $mail['date_mail'] . '</span>';
+            $listeMail .= '<span class="infosMail">' . date('d/m/Y',strtotime($mail['date_mail'])) . '</span>';
             $listeMail .= '<span class="infosMail">' . $mail['objet'] . '</span>';
             $listeMail .= '</article></a></p>';
         }
@@ -118,7 +118,7 @@ function getTexto($id_client){
             $listeTexto .= '<p>';
             $listeTexto .= '<a id="lienFC" href="viewMailbox.php">';
             $listeTexto .= '<article class="articleMail>';
-            $listeTexto .= '<span class="infosMail">' . $texto['date_texto'] . '</span>';
+            $listeTexto .= '<span class="infosMail">' . date('d/m/Y',strtotime($texto['date_texto'])) . '</span>';
             $listeTexto .= '<span class="infosMail">' . $texto['corps_message'] . '</span>';
             $listeTexto .= '</article></a></p>';
         }
