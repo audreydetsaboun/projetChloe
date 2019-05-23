@@ -246,6 +246,25 @@ section{
 #supprimer {
     width : 15%;
 }
+/* MODIFIER CLIENT */
+#textArea {
+    width : 100%;
+}
+
+textarea[name="corpsMessage"], [name="partPeau"]{
+    width : 100%;
+    border: 1px solid #50546C;
+}
+p.formButton{
+    display: flex;
+    justify-content: space-around;
+}
+p.formButton input[type="submit"]{
+    padding: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgb(255, 238, 255); 
+}
 
 /* MAIN SUPPRIMER CLIENT */
 
