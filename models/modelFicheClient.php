@@ -104,16 +104,30 @@ function getMail($id_client){
         return $listeMail;
     }
 
-
-
 //à finaliser...
-function getTexto(){
+function getTexto($id_client){
     $bddChloe = getBdd();
-    $request = $bddChloe->query('SELECT texto, date_texto, date_differee, corps_message FROM Texto');
+    $request = $bddChloe->prepare('SELECT t.* FROM Texto t INNER JOIN Messagerie mg ON mg.id_texto=t.id_texto WHERE mg.id_client=:id_client ORDER BY t.date_texto DESC');
+    $request->bindParam('id_client', $id_client);
     $request->execute();
     $textos = $request->fetchAll();
-    return $textos;
+
+    if(!empty($textos)){ 
+        $listeTexto = '';
+        foreach($textos as $texto){
+            $listeTexto .= '<p>';
+            $listeTexto .= '<a id="lienFC" href="viewMailbox.php">';
+            $listeTexto .= '<article class="articleMail>';
+            $listeTexto .= '<span class="infosMail">' . $texto['date_texto'] . '</span>';
+            $listeTexto .= '<span class="infosMail">' . $texto['corps_message'] . '</span>';
+            $listeTexto .= '</article></a></p>';
+        }
+        }else{
+            return '<article id="infosMail"><p>Il n\'y a pas de textos pour cette cliente.</p></article>';
+        }
+    return $listeTexto;
 }
+
 /*
 function getMessages(){
     getMail();
