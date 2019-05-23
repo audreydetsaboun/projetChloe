@@ -44,7 +44,7 @@
 		</p>
 	</fieldset>
 	<p class= "formButton">
-		<input type="submit" value="Modifier">
 		<input type="submit" value="Annuler">
+		<input type="submit" value="Modifier">
 	</p>
 </form>
