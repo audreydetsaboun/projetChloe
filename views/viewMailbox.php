@@ -19,7 +19,7 @@
 
         <div class="boutons">
                 <a id="mail" class="buttonStyle" href="ViewNewMail.php">envoi mail</a>
-                <a id="texto" class="buttonStyle" href="new_text.php">envoi sms</a>
+                <a id="texto" class="buttonStyle" href="ViewNewTexto.php">envoi sms</a>
         </div>
 
         <div class="boiteM">

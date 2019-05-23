@@ -8,28 +8,23 @@
         <link rel="stylesheet" href="styleForm.css">
     </head>
     <body>
-        <h1>Nouveau Mail</h1>
+        <h1>Nouveau Texto</h1>
         <form methode="post" action="../controllers/controllerNewMail.php">
             <fieldset>
                 <legend>Paramètres</legend>
-                <!-- date différée du mail -->
+                <!-- date différée du texto -->
                 <p>
                     <label for="dateDiff">date d'envoi :</label>    
                     <input type="date" id="dateDiff" name="dateDifferee" autofocus> 
                 </p>
 
-                <!-- destinataires du mail -->
+                <!-- destinataires du texto -->
                 <p>
                     <label for="destinataires">destinataires :</label>    
                     <input type="email" id="destinataires" name="destinataires" required>
                 </p>
-                <!-- objet du mail -->
-                <p>
-                    <label for="objet">objet :</label>    
-                    <input type="text" id="objet" name="objet" required>
-                </p>
             </fieldset>
-            <!-- corps du mail -->
+            <!-- corps du texto -->
             <p class="textArea">
                 <label for="corps">corps du message :</label>  
             </p><p>  

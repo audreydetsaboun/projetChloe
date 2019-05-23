@@ -61,8 +61,8 @@
 
             <!-- boutton d'envoi du formulaire -->
             <p class= "formButton">
-                <input type="submit" value="Valider">
                 <input type="submit" value="Annuler">
+                <input type="submit" value="Valider">
             </p>
         </form>
 
