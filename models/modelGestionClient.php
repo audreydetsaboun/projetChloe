@@ -12,7 +12,15 @@
         $bddChloe->exec($sql);
 
         return $bddChloe->lastInsertId();
-    }    
+    }   
+    
+    /* RECHERCHER CLIENT */ 
+    //en cours de création
+    function rechClient(){
+        $bddChloe = getBdd();
+        $req = $bddChloe->query("SELECT * FROM FicheClient LIKE prenom='%audrey%' "); //chercher comment remplacer le prenom par ce que va taper l'utilisateur
+    }
+    
     
     /* Modifier un client */
     function modifierClient($idClient, $nom, $prenom, $rue, $cp, $ville, $fixe, $mobile, $mail, $partPeau){
