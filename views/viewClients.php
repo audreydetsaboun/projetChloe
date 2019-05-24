@@ -21,23 +21,21 @@ require_once '../controllers/controllerClient.php' ?>
         <?php include('header.inc.php'); ?>
     </header>
     <?php
-    //trouvé une condition pour que ce message ne s'affiche que lors d'une 
-    //redirection apres effacement d'une fiche client
+    //ce message ne s'affiche que lors d'une redirection apres effacement d'une fiche client
     if(isset($_SESSION["flash"]) && $_SESSION["flash"])  {
         echo $_SESSION["flash"];
         unset($_SESSION["flash"]);
     }
-        //include('../models/messageDelete.inc.php');
     ?>
             
     <main id="mainClients"> 
         <h1 id="titreBdd">Fichier Clients</h1> 
 
         <div id="boutonsBdd">
-            <!-- bouton ajout nouveau client -->
+            <!-- AJOUT CLIENT -->
             <a href="viewNewClient.php"><img id="plus" src="img/Plus.png" alt=""></a>
 
-            <!-- bouton exportation BDD-->
+            <!-- EXPORT BDD-->
             <a href="export_db.php"><img id="dl" src="img/dl.png" alt=""></a>
         </div>
 
