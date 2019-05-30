@@ -1,7 +1,6 @@
 <?php
     require_once('dbConnexion.php');
     
-    
     //ajouter un nouveau client
     function ajouterClient($nom, $prenom, $rue, $cp, $ville, $fixe, $mobile, $mail, $partPeau){
         $bddChloe = getBdd();
@@ -37,8 +36,7 @@
 			mail ='$mail',
 			particularites ='$partPeau'
 			
-			WHERE id_client = $idClient
-		";
+			WHERE id_client = $idClient";
 
         $bddChloe->exec($sql);
 

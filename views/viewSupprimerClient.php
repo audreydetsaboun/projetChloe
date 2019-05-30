@@ -17,12 +17,10 @@
         <section id="section1">
             <p>Êtes-vous certain de vouloir supprimer cette fiche client ?</p>
         </section>
-
         <section id="section2">
         <h1 id="prenomClient"><?= $infosPersos['prenom']; ?></h1> 
             <h1 id="nomClient"><?= $infosPersos['nom']; ?></h1> 
         </section>
-
         <section id="section3">
             <p>
                 <a  href="?id_client=<?= $infosPersos['id_client']; ?>&action=supprimer">
@@ -41,7 +39,7 @@
                 ?>
         </section>
     </main>
-
+    
     <footer>
         <?php include('footer.inc.php'); ?>
     </footer>

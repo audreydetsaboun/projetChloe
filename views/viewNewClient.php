@@ -10,18 +10,13 @@
     <body>
         <h1>Nouvelle Fiche Client</h1>
         <form method="POST" action="../controllers/controllerNewClient.php">
-            <!-- date de création de fiche 
-            ===>>> TROUVER COMMENT LA METTRE AUTOMATIQUEMENT-->
             <p>
                 <label for="date">date :</label>    
                 <!--<input type="date" id="date" name="date" autofocus> -->
                 <?= date('d/m/Y'); ?>
             </p>    
-
             <fieldset>
-                <!-- infos perso -->
                 <legend>Informations personnelles</legend>
-
                 <p>
                     <label for="nom">nom :</label>    
                     <input id="nameField" class="renseignement" type="text" id="nom" name="nom" required>
@@ -50,16 +45,9 @@
                     <label for="mobile">mobile :</label>    
                     <input class="renseignement" type="text" id="mobile" name="mobile" >
                 </p>
-                <!-- -->
-                <p class="textArea">
-                <label for="partPeau">Particularités de peau :</label>  
-                </p>
-                <p>  
-                <textarea name="partPeau" id="partPeau" cols="30" rows="10" ></textarea>
-                </p>
+                <p class="textArea"><label for="partPeau">Particularités de peau :</label></p>
+                <p><textarea name="partPeau" id="partPeau" cols="30" rows="10" ></textarea></p>
             </fieldset>
-
-            <!-- boutton d'envoi du formulaire -->
             <p class= "formButton">
                 <input type="submit" value="Annuler">
                 <input type="submit" value="Valider">

@@ -36,12 +36,8 @@
 			<input type="email" id="mail" name="mail" value="<?= $infosPersos['mail']; ?>">
 		</p>
 
-		<p class="textArea">
-			<label for="partPeau">Particularités de peau :</label>  
-		</p>
-		<p>  
-			<textarea name="partPeau" id="partPeau" cols="30" rows="10"><?= $infosPersos['particularites']; ?></textarea>
-		</p>
+		<p class="textArea"><label for="partPeau">Particularités de peau :</label></p>
+		<p><textarea name="partPeau" id="partPeau" cols="30" rows="10"><?= $infosPersos['particularites']; ?></textarea></p>
 	</fieldset>
 	<p class= "formButton">
 		<input type="submit" value="Annuler">
