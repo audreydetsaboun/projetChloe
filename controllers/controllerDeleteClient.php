@@ -5,14 +5,10 @@ if (session_status() == PHP_SESSION_NONE) {
     require_once '../models/modelFicheClient.php'; 
     $infosPersos = getInfosPerso($_GET['id_client']);
 
-
    require_once '../models/modelGestionClient.php'; 
    $idClient = getIdClient($_GET['id_client']);
 
-   //supprimerClient($infosPersos);
-
-
     $_SESSION["flash"] = '<p class="delete"> Fiche client de ' . $infosPersos['prenom'] . ' ' . $infosPersos['nom'] . " effacée !</p>"  ;
-   //header('location: ../views/viewClients.php');
+   
    
 ?>
