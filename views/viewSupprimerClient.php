@@ -35,6 +35,7 @@
                 <?php 
                     if(isset($_GET['action'])){
                         supprimerClient($idClient);
+                        header('location: ../views/viewClients.php');
                     }
                 ?>
         </section>
