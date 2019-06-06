@@ -288,6 +288,14 @@ p.formButton input[type="submit"]{
     text-align: center;
     width: 100%;
 }
+.button{
+    background-color : white;
+    border-radius: 5px;
+    padding : 10px 10px;
+}
+.button:hover{
+    background-color: #f192e5;
+}
 /* MAIN MESSAGERIE*/
 
 #mainMessagerie {

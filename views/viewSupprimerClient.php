@@ -1,4 +1,5 @@
-<?php require_once '../controllers/controllerDeleteClient.php' ?>
+<?php 
+require_once '../controllers/controllerDeleteClient.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,12 +25,12 @@
         <section id="section3">
             <p>
                 <a  href="?id_client=<?= $infosPersos['id_client']; ?>&action=supprimer">
-                    <button type="submit">SUPPRIMER</button>
+                    <button class="button" type="submit">SUPPRIMER</button>
                 </a>
             </p>
             <p>
-                <a href="viewFicheClients?id_client=<?= $infosPersos['id_client']; ?>.php">
-                    <button type="submit">Annuler</button>
+                <a href="viewFicheClient.php?id_client=<?= $infosPersos['id_client']; ?>">
+                    <button class="button" type="submit">Annuler</button>
                 </a>
             </p>
                 <?php 
